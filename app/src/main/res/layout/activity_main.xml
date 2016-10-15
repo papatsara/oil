@@ -8,6 +8,33 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="rtc.papatsara.oiltraffic.MainActivity">
+    tools:context="rtc.papatsara.oiltraffic.MainActivity"
+    android:background="@drawable/wallpapers_a_00">
 
+    <Button
+        android:text="About Me"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button"
+        android:layout_alignParentBottom="true" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/livTraffic"
+        android:layout_below="@+id/textView"
+        android:layout_above="@+id/button"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp" />
+
+    <TextView
+        android:text="@string/title_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:textSize="@dimen/h1"
+        android:textStyle="normal|bold"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/background_light" />
 </RelativeLayout>

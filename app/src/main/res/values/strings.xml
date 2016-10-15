@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Oil traffic</string>
+
+    <string name="title_main">ป้าย จาจร</string>
+
+
 </resources>
