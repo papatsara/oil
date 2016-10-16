@@ -7,6 +7,7 @@ import android.provider.LiveFolders;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 
@@ -48,16 +49,28 @@ public class MainActivity extends AppCompatActivity {
         //ListView Controller
         //Get Value from Class
         MyConstant myConstant = new MyConstant();
-        int[] ints = myConstant.getInts();
+        final int[] ints = myConstant.getInts();
 
         //Get Value Frome xml
-        String[] titleStrings = getResources().getStringArray(R.array.title);
-        String[] detailStrings = getResources().getStringArray(R.array.detail);
+        final String[] titleStrings = getResources().getStringArray(R.array.title);
+        final String[] detailStrings = getResources().getStringArray(R.array.detail);
 
         //Create ListView
         TrafficAdapter trafficAdapter = new TrafficAdapter(MainActivity.this,
                 titleStrings, detailStrings, ints);
         listView.setAdapter(trafficAdapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(MainActivity.this, DetailActivity.class);
+                intent.putExtra("Title", titleStrings[position]);
+                intent.putExtra("Image", ints[position]);
+                intent.putExtra("Detail", detailStrings[position]);
+                startActivity(intent);
+
+            }
+        });
 
 
     }   // Main Method

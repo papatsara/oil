@@ -13,11 +13,11 @@
     android:background="@drawable/wallpapers_a_00">
 
     <Button
-        android:text="Button"
+        android:text="BACK"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/button2"
-        tools:text="ฺฺBACK"
+        tools:text="ฺฺ"
         android:layout_alignParentBottom="true" />
 
     <LinearLayout
