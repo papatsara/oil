@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-             //Sound Effect
+                //Sound Effect
                 MediaPlayer mediaPlayer = MediaPlayer.create(getBaseContext(),
                         R.raw.dog);
                 mediaPlayer.start();
@@ -41,8 +41,23 @@ public class MainActivity extends AppCompatActivity {
                 intent.setData(Uri.parse(url));
                 startActivity(intent);
 
+
             } // onClick
         });
+
+        //ListView Controller
+        //Get Value from Class
+        MyConstant myConstant = new MyConstant();
+        int[] ints = myConstant.getInts();
+
+        //Get Value Frome xml
+        String[] titleStrings = getResources().getStringArray(R.array.title);
+        String[] detailStrings = getResources().getStringArray(R.array.detail);
+
+        //Create ListView
+        TrafficAdapter trafficAdapter = new TrafficAdapter(MainActivity.this,
+                titleStrings, detailStrings, ints);
+        listView.setAdapter(trafficAdapter);
 
 
     }   // Main Method
